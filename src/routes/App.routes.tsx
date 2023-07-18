@@ -9,6 +9,7 @@ export const AppRoutes = () => {
     <Routes>
         <Route path="/" element={<App />}/>
         <Route path='*' element={<NotFound/>}/> 
+        
        {/* <AppRoutes/>  */}
     </Routes>
   )
