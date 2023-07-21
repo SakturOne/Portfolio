@@ -175,35 +175,35 @@ export const Tiempo = () => {
       <div></div>
       {/* ... Contenido previo ... */}
       <div className="flex flex-col w-full justify-center items-center bg-black">
-    <p className="text-white mb-2 md:mr-36">Introduce ciudad: </p>
-    <div className="mb-4 md:mb-12 w-full md:w-auto">
-      <input className="pl-2 py-2 w-full md:w-auto" type="text" value={location} onChange={(e) => setLocation(e.target.value)} />
-      <button onClick={fetchData} className="ml-0 mt-2 md:ml-2 md:mt-0 px-4 py-3 bg-blue-500 text-white rounded">Buscar</button>
-    </div>
-    {/* Mostrar el tiempo de los próximos cinco días */}
-    {apiData && (
-      <div className="w-full grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-5 lg:grid-cols-5 ">
-        {apiData.forecast.forecastday.map((day) => (
-          <div
-            key={day.date}
-            className="bg-white w-full p-4 rounded-lg shadow-md text-center"
-          >
-            <p className="text-gray-500">{day.date}</p>
-            <img
-              src={day.day.condition.icon}
-              alt={day.day.condition.text}
-              className="w-20 h-20 mx-auto mb-2"
-            />
-            <p className="text-lg font-medium text-black">
-              {day.day.avgtemp_c}°C
-            </p>
-            <p>{day.day.condition.text}</p>
+        <p className="text-white mb-2 md:mr-36">Introduce ciudad: </p>
+        <div className="mb-4 md:mb-12 w-full md:w-auto">
+          <input className="pl-2 py-2 w-full md:w-auto" type="text" value={location} onChange={(e) => setLocation(e.target.value)} />
+          <button onClick={fetchData} className="ml-0 mt-2 md:ml-2 md:mt-0 px-4 py-3 bg-blue-500 text-white rounded">Buscar</button>
+        </div>
+        {/* Mostrar el tiempo de los próximos cinco días */}
+        {apiData && (
+          <div className="w-full grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-5 lg:grid-cols-5 ">
+            {apiData.forecast.forecastday.map((day) => (
+              <div
+                key={day.date}
+                className="bg-white w-full p-4 rounded-lg shadow-md text-center"
+              >
+                <p className="text-gray-500">{day.date}</p>
+                <img
+                  src={day.day.condition.icon}
+                  alt={day.day.condition.text}
+                  className="w-20 h-20 mx-auto mb-2"
+                />
+                <p className="text-lg font-medium text-black">
+                  {day.day.avgtemp_c}°C
+                </p>
+                <p>{day.day.condition.text}</p>
+              </div>
+            ))}
           </div>
-        ))}
+        )}
       </div>
-    )}
-  </div>
-  <Footer />
-</div>
+      <Footer />
+    </div>
   );
 };

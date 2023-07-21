@@ -11,7 +11,7 @@ const Login = () => {
     };
 
     return (
-        <form onSubmit={handleSubmit} className='flex flex-col sm:flex-row p-1 gap-3 flex flex-row sm:flex-row p-1 gap-3' >
+        <form onSubmit={handleSubmit} className='flex flex-col sm:flex-row p-1 gap-3 ' >
             <input className='rounded-lg flex-1-lg border-solid border-2 border-blue-500'
                 type="text"
                 name="username"
