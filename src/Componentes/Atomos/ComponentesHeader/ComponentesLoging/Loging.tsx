@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 const Login = () => {
     const [username, setUsername] = useState('');
@@ -11,25 +11,23 @@ const Login = () => {
     };
 
     return (
-        <div>
-        <form onSubmit={handleSubmit} >
-            <input className='rounded-lg m-2 border-solid border-2 border-blue-500'
+        <form onSubmit={handleSubmit} className='flex flex-col sm:flex-row p-1 gap-3 flex flex-row sm:flex-row p-1 gap-3' >
+            <input className='rounded-lg flex-1-lg border-solid border-2 border-blue-500'
                 type="text"
                 name="username"
-                placeholder="Uusuario"
+                placeholder="Correo"
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
             />
-            <input className='rounded-lg m-2 border-solid border-2 border-blue-500'
+            <input className='rounded-lg flex-1 border-solid border-2 border-blue-500'
                 type="password"
                 name="password"
                 placeholder="Contraseña"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
             />
-            <input type="submit" value="Iniciar sesión" className='color bg-blue-500 rounded-lg text-white m-2' />
+            <input type="submit" value="Iniciar sesión" className='bg-gradient-to-r from-cyan-500 to-blue-500 rounded-lg text-white flex-1' />
         </form>
-        </div>
     );
 };
 
